@@ -1,0 +1,12 @@
+{
+    "name": "le-board",
+    "version": "0.0.1",
+    "description": "Le Board",
+    "main": "leboard.js",
+    "private": true,
+    "dependencies": {
+        "express": "^4.17.1",
+        "express-sse": "^0.5.1",
+        "data-store": "^4.0.3"
+    }
+}

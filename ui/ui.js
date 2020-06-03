@@ -52,6 +52,9 @@ function addOptimization(optim) {
 
     td = document.createElement('td')
     textnode = document.createTextNode(countToString(optim.numParams))
+    td.setAttribute('data-toggle', 'tooltip')
+    td.setAttribute('data-placement', 'top')
+    td.setAttribute('data-original-title', optim.numParams)
     td.appendChild(textnode)
     entry.appendChild(td)
 

@@ -1,7 +1,6 @@
 <html>
 
 <head>
-  <script src="bootstrap.min.js"></script>
   <link rel="stylesheet" href="bootstrap.min.css" />
   <link rel="shortcut icon" href="#" />
   <title>Le Board</title>
@@ -17,10 +16,10 @@
   <div class="collapse navbar-collapse" id="navbarColor01">
       <ul class="navbar-nav mr-auto">
       <li class="nav-item active" id="li0">
-        <a class="nav-link" href="#" onclick="setPage(0);">Curves</a>
+        <a class="nav-link" href="#" onclick="setPage(0);">Optimizations</a>
       </li>
       <li class="nav-item" id="li1">
-        <a class="nav-link" href="#" onclick="setPage(1);">Graphs</a>
+        <a class="nav-link" href="#" onclick="setPage(1);">Models</a>
       </li>
       </ul>
   </div>
@@ -37,17 +36,31 @@
     </div>
 
     <div id="page0" style="display:none;">
-      <h1>Learning Curves</h1>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Type</th>
+            <th scope="col">Updated</th>
+            <th scope="col">#Steps</th>
+            <th scope="col">#Epochs</th>
+            <th scope="col">#Params</th>
+            <th scope="col">Size</th>
+          </tr>
+        </thead>
+        <tbody id="optimsTBody">
+        </tbody>
+      </table>
     </div>
 
     <div id="page1" style="display:none;">
-      <h1>Computational Graphs</h1>
+      <h1>Weights and Biases</h1>
     </div>
 
   </div>
 
   <script src="moment.min.js"></script>
   <script src="ui.js"></script>
+  <script src="init.js"></script>
 </body>
 
 </html>

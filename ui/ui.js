@@ -12,6 +12,14 @@ function sizeRound(units) {
     return parseFloat(units).toString()
 }
 
+function countToString(units) {
+    if      (units >= 1000000000) { units = sizeRound(units / 1000000000) + ' G' }
+    else if (units >= 1000000)    { units = sizeRound(units / 1000000) + ' M' }
+    else if (units >= 1000)       { units = sizeRound(units / 1000) + ' k' }
+    else                          { units = sizeRound(units) }
+    return units
+}
+
 function sizeToString(bytes) {
     if      (bytes >= 1073741824) { bytes = sizeRound(bytes / 1073741824) + ' GiB' }
     else if (bytes >= 1048576)    { bytes = sizeRound(bytes / 1048576) + ' MiB' }
@@ -44,7 +52,7 @@ function addOptimization(optim) {
     entry.appendChild(td)
 
     td = document.createElement('td')
-    textnode = document.createTextNode(optim.numParams)
+    textnode = document.createTextNode(countToString(optim.numParams))
     td.appendChild(textnode)
     entry.appendChild(td)
 

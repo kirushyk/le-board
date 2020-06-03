@@ -17,3 +17,17 @@ addOptimization({
     numParams: 15328,
     size: 2400000
 })
+
+addModel({
+    type: 'Sequential',
+    updated: '2007-05-31',
+    numParams: 520000,
+    size: 36000000
+})
+
+addModel({
+    type: 'Sequential',
+    updated: '2012-05-31',
+    numParams: 3600000,
+    size: 480000000
+})

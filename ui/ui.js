@@ -29,7 +29,6 @@ function sizeToString(bytes) {
 }
 
 function addOptimization(optim) {
-
     var entry = document.createElement('tr')
     var td = document.createElement('td')
     var textnode = document.createTextNode(optim.type)
@@ -66,5 +65,35 @@ function addOptimization(optim) {
         optimsTBody.insertBefore(entry, optimsTBody.childNodes[0])
     } else {
         optimsTBody.appendChild(entry)
+    }
+}
+
+function addModel(model) {
+    var entry = document.createElement('tr')
+    var td = document.createElement('td')
+    var textnode = document.createTextNode(model.type)
+    td.appendChild(textnode)
+    entry.appendChild(td)
+
+    td = document.createElement('td')
+    textnode = document.createTextNode(moment(model.updated).fromNow())
+    td.appendChild(textnode)
+    entry.appendChild(td)
+
+    td = document.createElement('td')
+    textnode = document.createTextNode(countToString(model.numParams))
+    td.appendChild(textnode)
+    entry.appendChild(td)
+
+    td = document.createElement('td')
+    textnode = document.createTextNode(sizeToString(model.size))
+    td.appendChild(textnode)
+    entry.appendChild(td)
+
+    var modelsTBody = document.getElementById('modelsTBody')
+    if (modelsTBody.firstChild) {
+        modelsTBody.insertBefore(entry, modelsTBody.childNodes[0])
+    } else {
+        modelsTBody.appendChild(entry)
     }
 }

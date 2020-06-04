@@ -28,8 +28,20 @@ function sizeToString(bytes) {
     return bytes
 }
 
+function showOptimization() {
+    var optimModal = document.getElementById('optimModal')
+    optimModal.style.setProperty('display', 'block');
+}
+
+function hideOptimization() {
+    var optimModal = document.getElementById('optimModal')
+    optimModal.style.setProperty('display', 'none');
+}
+
 function addOptimization(optim) {
     var entry = document.createElement('tr')
+    entry.setAttribute('onclick', 'showOptimization()')
+
     var td = document.createElement('td')
     var textnode = document.createTextNode(optim.type)
     td.appendChild(textnode)
